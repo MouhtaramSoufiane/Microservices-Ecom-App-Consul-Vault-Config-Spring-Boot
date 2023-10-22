@@ -26,6 +26,13 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private List<ProductItem> productItems;
 
+    public double getTotal(){
+        int somme=0;
+        for (ProductItem pI:productItems) {
+            somme+=pI.getAmount();
+        }
+        return somme;
+      }
 
 
 }
